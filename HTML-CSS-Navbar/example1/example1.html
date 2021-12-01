@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <style>
+      body {
+        background-color: whitesmoke;
+        margin: 0;
+      }
+      .topnavbar {
+        background-color: #333;
+        overflow: hidden;
+      }
+      .topnavbar a {
+        color: #f2f2f2;
+        padding: 15px 15px;
+        text-decoration: none;
+        font-size: 17px;
+
+        float: left;
+        display: block;
+      }
+      .topnavbar a.active {
+        background-color: #04aa6d;
+        color: black;
+      }
+      .topnavbar a:hover {
+        background-color: #ddd;
+        color: black;
+      }
+      .topnavbar .icon {
+        display: none;
+      }
+      @media only screen and (max-width: 600px) {
+        .topnavbar a:not(:first-child) {
+          display: none;
+        }
+        .topnavbar a.icon {
+          float: right;
+          display: block;
+        }
+        body {
+          background-color: lightblue;
+        }
+      }
+
+      @media only screen and (max-width: 600px) {
+        .topnavbar.responsive {
+          position: relative;
+        }
+        .topnavbar.responsive .icon {
+          position: absolute;
+          right: 0;
+          top: 0;
+        }
+        .topnavbar.responsive a {
+          float: none;
+          display: block;
+          text-align: left;
+        }
+      }
+    </style>
+    <script>
+      function callFun() {
+        let x = document.getElementById("myTopnavbar");
+        if (x.className === "topnavbar") {
+          x.className += " responsive";
+        } else {
+          x.className = "topnavbar";
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div class="topnavbar" id="myTopnavbar">
+      <a href="#javascriptcentric" class="active">JavaScript Centric</a>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a href="#blog">Blog</a>
+
+      <a href="javascript: void(0);" class="icon" onclick="callFun()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+  </body>
+</html>
